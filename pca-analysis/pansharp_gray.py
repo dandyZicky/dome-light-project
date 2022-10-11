@@ -1,5 +1,6 @@
 
 #%%
+from cv2 import split
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -23,20 +24,31 @@ PLOTITNG = 1
 
 
 #%%
-uniband = []
-for img in FILE:
-    uniband.append(img_load.load_image_file(img, 'L'))
+r_band = [0 for _ in range(len(FILE))] 
+g_band = [0 for _ in range(len(FILE))]
+b_band = [0 for _ in range(len(FILE))]
+for idx, img in enumerate(FILE):
+    temp = img_load.load_image_file(img)
+    r_band[idx], g_band[idx], b_band[idx] = split(temp)
 
-read_img_ex_list = np.array(uniband[0].flatten())
+read_img_ex_list = np.array(r_band[0].flatten())
 for i in range(1, 7):
-    arr = uniband[i]
+    arr = r_band[i]
+    read_img_ex_list = np.vstack((read_img_ex_list, arr.flatten()))
+
+for i in range(7):
+    arr = g_band[i]
+    read_img_ex_list = np.vstack((read_img_ex_list, arr.flatten()))
+
+for i in range(7):
+    arr = b_band[i]
     read_img_ex_list = np.vstack((read_img_ex_list, arr.flatten()))
 
 
 #%%
-figure1, axis1 = plt.subplots(1, 7)
-for val, img in enumerate(uniband):
-    axis1[val].imshow(img, cmap='gray')
+# figure1, axis1 = plt.subplots(1, 7)
+# for val, img in enumerate(uniband):
+#     axis1[val].imshow(img, cmap='gray')
 
 matrix_img = read_img_ex_list
 
@@ -59,6 +71,6 @@ if PLOTITNG:
 
 
 # %%
-for i in range(7):
-    plt.imsave(f'pca{i}.jpg', eigen_img[i].reshape(uniband[0].shape), cmap='gray')
+for i in range(21):
+    plt.imsave(f'pca{i}.jpg', eigen_img[i].reshape(r_band[0].shape), cmap='gray')
 # %%
