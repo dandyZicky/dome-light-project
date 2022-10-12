@@ -61,16 +61,16 @@ eigen_img = pca.components_
 if PLOTITNG:
     plt.bar(list(range(1, len(pca.explained_variance_ratio_)+1)), pca.explained_variance_ratio_)
 
-print(f"Variance ratio : {sum(pca.explained_variance_ratio_)}")
+print(f"Sum of explained variance ratio : {sum(pca.explained_variance_ratio_)}")
 
 #%%
 if PLOTITNG:
-    figure2, axis2 = plt.subplots(1, 7, figsize=(20, 20))
-    for i in range(7):
-        axis2[i].imshow(eigen_img[i].reshape(uniband[0].shape), cmap='gray')
+    figure2, axis2 = plt.subplots(2, 2, figsize=(20, 20))
+    for i in range(4):
+        axis2[i//2][i%2].imshow(eigen_img[-(i+2)].reshape(r_band[0].shape), cmap='gray')
 
 
 # %%
 for i in range(21):
-    plt.imsave(f'pca{i}.jpg', eigen_img[i].reshape(r_band[0].shape), cmap='gray')
+    plt.imsave(f'pca{i}.png', eigen_img[i].reshape(r_band[0].shape), cmap='gray')
 # %%
