@@ -74,3 +74,4 @@ if PLOTITNG:
 for i in range(21):
     plt.imsave(f'pca{i}.png', eigen_img[i].reshape(r_band[0].shape), cmap='gray')
 # %%
+plt.show()

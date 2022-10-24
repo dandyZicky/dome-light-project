@@ -278,6 +278,7 @@ int main(int argc, char *argv[])
       auto width = imagePush.size().width/scaleDownFactor;
       auto height = imagePush.size().height/scaleDownFactor;
       cv::Mat resized_down;
+      std::cout << resized_down;
       cv::resize(imagePush, resized_down, cv::Size(width, height));
       camImages.push_back(resized_down);
     }
