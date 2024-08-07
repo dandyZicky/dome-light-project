@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/dandy/Projects/dome-light-impl/Uncalibrated-Photometric-Stereo/build",
+  "command": "/usr/bin/c++  -isystem /usr/local/include/opencv4 -Wall -Wextra -O3 -std=gnu++23 -o CMakeFiles/main.dir/src/main.cpp.o -c /home/dandy/Projects/dome-light-impl/Uncalibrated-Photometric-Stereo/src/main.cpp",
+  "file": "/home/dandy/Projects/dome-light-impl/Uncalibrated-Photometric-Stereo/src/main.cpp",
+  "output": "CMakeFiles/main.dir/src/main.cpp.o"
+}
+]

@@ -1,0 +1,3 @@
+/home/dandy/Projects/dome-light-impl/Uncalibrated-Photometric-Stereo/build/CMakeFiles/main.dir
+/home/dandy/Projects/dome-light-impl/Uncalibrated-Photometric-Stereo/build/CMakeFiles/edit_cache.dir
+/home/dandy/Projects/dome-light-impl/Uncalibrated-Photometric-Stereo/build/CMakeFiles/rebuild_cache.dir
